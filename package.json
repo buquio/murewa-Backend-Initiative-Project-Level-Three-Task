@@ -1,0 +1,40 @@
+{
+  "name": "level-1",
+  "version": "1.0.0",
+  "description": "Level 1 Task",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index",
+    "start": "node src/index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murewaashiru/Backend-Initiative-Project.git"
+  },
+  "author": "Omomurewa George-Ashiru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murewaashiru/Backend-Initiative-Project/issues"
+  },
+  "homepage": "https://github.com/murewaashiru/Backend-Initiative-Project#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.10",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
+  }
+}
