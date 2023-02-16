@@ -9,6 +9,13 @@ require('./config/passport');
 const { errorResponse } = require( './utils/response');
 dotenv.config();
 
+// ??????????????????
+//explain the .env folder??????
+
+// - Clone the application and run `npm install`
+// - Run `cp .env.example .env` to create the .env variables and fill them
+// - Run `npm run dev` to start development server
+
 const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));

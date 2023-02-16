@@ -12,7 +12,7 @@ const { successResponse, errorResponse } = require( '../utils/response');
 // signup
 const createUser = async (req, res, next) => {
   try {
-    const data = req.body; //newpassword
+    const data = req.body; //newpassword,uname,pwd
     const {username, email }= req.body;
 //to signup first see if the username does not exit before
     const user = await Users.findOne({username, email});
@@ -20,7 +20,7 @@ const createUser = async (req, res, next) => {
 //save and hash the new password
     const salt = await (0, genSalt)(10);
     const newPassword = await hash(data.password, salt);
-    data.password = newPassword;
+    data.password = newPassword; //saves the hashedpassword back inside data.password
 //create user by storing the username,email & pwd and generate token(unique number)
     const result = await Users.create(data);    
     const token = await generateToken({_id:result._id, username});
@@ -114,7 +114,7 @@ const updateUser = async (req, res, next) => {
     else if (email){
       user =  await Users.findOne({email});
       if (user && user._id != _id) return errorResponse(res, 409, 'Email already taken'); 
-      await Users.findOneAndUpdate({_id}, {email}).select('-password');      
+      await Users.findOneAndUpdate({_id}, {email}).select('-password');   ///////??? result=   
     }
 
     return successResponse(res, 200, `User updated successfully`, result);

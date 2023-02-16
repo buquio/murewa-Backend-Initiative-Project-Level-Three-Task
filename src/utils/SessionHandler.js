@@ -2,8 +2,8 @@ const jwt = require('jsonwebtoken');
 const dotenv = require( 'dotenv');
 dotenv.config();
 
-
-//used inside auth.js & user controller
+//explain the .env folder??????
+/////used inside auth.js & user controller
 const generateToken = (data) => { //encrypt
     const token = jwt.sign(
       data,
@@ -14,7 +14,7 @@ const generateToken = (data) => { //encrypt
   }
 
 
-  /////////////
+/////////////
   const decodeToken = (data) => { //deencrypt
     try {
       return jwt.verify(data.token, data.secret || process.env.TOKEN_SECRET);

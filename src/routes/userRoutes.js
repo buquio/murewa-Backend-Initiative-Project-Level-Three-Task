@@ -7,8 +7,8 @@ const Auth = require('../middlewares/auth');
 
 const router = express.Router();
 
+////login pathway
 router.get('/facebook', passport.authenticate('facebook', { scope: ['email'] }) );
-
 router.get('/facebook/redirect',
     passport.authenticate('facebook'), User.socialLogin
 );

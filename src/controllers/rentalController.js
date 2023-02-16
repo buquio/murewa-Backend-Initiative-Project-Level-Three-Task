@@ -32,7 +32,6 @@ const getRentals = async (req, res, next) => {
  * @returns {object} custom response
 */
 
-
 const getRentalsByUserId = async (req, res, next) => {
   try {
     const userId = req.user._id;
